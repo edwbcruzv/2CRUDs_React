@@ -1,4 +1,4 @@
-export const helpHTTP = () => {
+export const helperHTTP = () => {
     const customFetch = (endpoint,options) => {
         // manejar objetos json en las peticiones
         const defaultHeader={
@@ -21,10 +21,8 @@ export const helpHTTP = () => {
 
         console.log(options)
 
-        setTimeout(() => {
-            // si despues de tres segundos no hay respuesta de un servidor abortamos
-            controller.abort()
-        }, 3000)
+        // si despues de tres segundos no hay respuesta de un servidor abortamos
+        setTimeout(() => controller.abort(), 3000)
 
         return fetch(endpoint,options)
             .then((res) => res.ok ? res.json():Promise.reject({

@@ -3,6 +3,7 @@ import TableRow from './TableRow'
 
 
 function CrudTable({data, setDataToEdit, deleteData}) {
+    console.log("renderizando crudTable")
   return (
     <div>
         <h3>Tabla de datos</h3>
@@ -21,11 +22,13 @@ function CrudTable({data, setDataToEdit, deleteData}) {
 
             <tbody>
                 {
-                    data.length===0? <tr><td colSpan='6'>Sin datos</td></tr>:
-                    
+                    data.length > 0? 
                     data.map((e,index)=>{
                         return <TableRow key={index} elem={e} setDataToEdit={setDataToEdit} deleteData={deleteData}/>
                     }) 
+                    :
+                    <tr><td colSpan='6'>Sin datos</td></tr>
+                    
                 }
                 
             </tbody>

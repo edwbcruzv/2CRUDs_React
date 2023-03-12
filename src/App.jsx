@@ -135,7 +135,6 @@ function App() {
     <div>
       <h2>API</h2>
       <Api/>
-      {"cadenas"}
       <hr />
       <h2>CRUD APP</h2>
       <article className='grid-1-2'>
